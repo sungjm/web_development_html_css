@@ -1,0 +1,96 @@
+/* 자손 결합자 */
+.outer li {
+  color: olivedrab;
+}
+/* 자식(1촌 자식) 결합자 */
+.outer > li {
+  color: dodgerblue;
+}
+
+/* 자식의 자손을 선택하고 싶다면 작성하는 코드 */
+.outer > li li {
+  text-decoration: underline;
+}
+/* 즉 > 과 공백을 이용하여 특정한 조건을 걸어서 CSS를 적용시킬 수 있습니다.
+
+CSS 문서에서 .outer li부분에서 color: olivedrab;을 주석처리하면 .outer > li에 지정한 dodgerblue가 자식 뿐만 아니라 손자까지(outer기준) 적용되는 것을 확인할 수 있는데, 이는 서체 및 텍스트 관련 CSS의 일부 속성들이 그 자식에게까지 자동 상속되기 때문.
+
+즉, 자식 결합자라도 적용한 속성이 상속되는 속성이라면 이를 덮어쓰는 다른 선택자와 속성을 지정하지 않는 한 그 아래의 자식들도 해당 속성을 상속 받습니다.
+*/
+/* 뒤따르는 모든 동생들 결합자 */
+.starter ~ li {
+  font-style: italic;
+}
+/* 뒤따르는 바로 다음 동생 결합자만 적용  + 사용 */
+.starter + li {
+  font-weight: bold;
+}
+/* 첫 번째, 마지막 요소 가상 클래스 */
+ol li:first-child,
+ol li:last-child {
+  color: yellowgreen;
+}
+/*
+  ol 내의 li태그의 첫 번째 요소(first-child)와, li 태그의 마지막 요소(last-child)를 지정하여, 특정 태그에 속성을 기입하지 않고도 CSS를 적용시킬 수 있음.
+
+  밑에는 응용입니다.
+*/
+/* ~가 아닌 요소 가상 클래스 */
+/* 1 */
+.outer > li:not(:last-child) {
+  text-decoration: line-through; /*최소선을 의미하는 CSS*/
+}
+/* 2 */
+ul:not(.outer) li {
+  font-weight: bold;
+}
+
+/*
+  1번 해석 : outer 클래스의 직계 자식(>)은 li 태그 중에 마지막 요소(last-child)가 아닌 것을 골라서 취소선을 적용한다는 의미.
+
+  2번 해석 : ul 태그중에 outer 클래스가 아닌 것을 골라서 그 안에 있는 li태그에만 볼드체 적용.
+    그 결과 과일 항목 아래에 있는 ul 태그는 outer 클래스가 아니기 때문에 사과 / 포도 / 딸기 / 키위만 볼드체 적용.
+*/
+/* ~번째 요소 가상 클래스 */
+ol li:nth-child(3) {
+  font-weight: bold;
+  color: deeppink;
+}
+
+ol li:nth-child(4n) { /*4, 8에 적용 */
+  font-weight: bold;
+  color: deepskyblue;
+}
+
+ol li:nth-child(2n+3) { /* 3, 5, 7, 9 적용 */
+  font-weight: bold;
+  color: darkgreen;
+}
+
+ol li:nth-child(even) { /* 짝수에만 적용, 홀수는 odd */
+  font-weight: bold;
+  color: white
+}
+/*
+  이상의 코드들에서 주의할 점 :
+    nth-child()의 소괄호 내에 들어갈 수 있는 사례 :
+    1) # : 특정 숫자
+    2) #n : n번째마다
+    3) #n+ @ : n번째마다+@의 값에
+    4) odd : 홀수번째에
+    5) even : 짝수번째에
+
+    이거 일일이 쓰는 이유는 위의 코드 사례를 통해 보여드리고 싶어도 뒷 부분에 작성된게 우선 적용되기 때문에 여기에 작성된 부분도 참조하시기 바랍니다.
+
+    얘는 좀 자주나오는 거라서 꼭 알아두셨으면 합니다.
+    마우스오버(:hover)
+*/
+/* 마우스오버 가상 클래스 */
+li:hover {
+  font-weight: bold;
+  color: blue;
+}
+/*
+hover 의미가 떠다니다라는 뜻으로, 마우스가 특정 요소 위에 올려봤을 때, 적용됩니다.
+단, 구체적으로 명시한 요소들은 우선순위가 높기 때문에 적용이 안되는 경우도 있습니다.
+*/
