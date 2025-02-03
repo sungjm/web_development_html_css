@@ -1,0 +1,9 @@
+p {
+  text-decoration: blue wavy overline 5px;
+  text-transform: capitalize;
+  /* text-transform: uppercase; */
+  /* text-transform: lowercase; */
+  /*
+    마찬가지로 이상의 text-decoration 속성은 다양한 속성값을 집어넣어보면서 확인하시기 바랍니다.
+  */
+}
