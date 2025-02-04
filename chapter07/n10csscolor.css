@@ -1,0 +1,8 @@
+p {
+  /* 글자색 관련 */
+  /* color: yellow; */
+  color: #5f5f5f;
+
+  /* 배경색 관련 */
+  background-color: rgba(0, 0, 100, 0);
+}

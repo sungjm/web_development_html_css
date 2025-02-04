@@ -12,7 +12,7 @@ p {
   width: 100%;
 } */
 
-div {
+.div1 {
   /*(1) 마진 하나 지정 사례*/
   /* padding: 0px;
   margin: 24px; */
@@ -29,4 +29,29 @@ div {
   /* margin: 12px 24px 12px;
   padding: 0; */
   
+  /* padding 관련 수업 부분 */
+  /* (1) 값을 하나만 입력한 사례 */
+  /* margin: 0;    보통 margin 설정 먼저 하고 padding 설정함
+  padding: 16px; */
+
+  /* (2) padding 값을 두개로 지정하는 경우 */
+  /* margin: 0;
+  padding: 0 4em; */
+  /*첫 번째 값은 위아래 표기 - 두 번째 값은 좌우 표기*/
+
+  /* (3) padding 값을 네 개로 지정하는 경우 */
+  /* margin: 0;
+  padding: 1em 2em 3em 4em; */
+
+  /* (4) padding 값을 세 개로 지정하는 경우 */
+  /* margin: 0;
+  padding: 4em 2em 0; 첫 번째 - 위 / 두 번째 - 좌우 / 세 번째 - 아래 */
+  margin: 50px;
+  padding: 16px;
+  background-color: blue;
 } 
+
+.div2 {
+  margin: 24px;
+  background-color: red;
+}
