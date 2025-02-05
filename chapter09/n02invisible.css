@@ -1,0 +1,31 @@
+div {
+  padding: 24px;
+  background-color: skyblue;
+
+  /* 마우스 모양 관련 및 visible 속성 */
+  cursor: auto; 
+  /* 기존 설정값(화살표), 브라우저마다 다름 */
+  cursor: default;  
+  /* 무조건 화살표 모양 */
+  cursor: none; 
+  /* 표시하지 않음 */
+  cursor: pointer; 
+  /* 손 모양 클릭 여부 표시 */
+  /* cursor: zoom-in;  */
+  /* 확대 */
+  /* cursor: zoom-out;  */
+  /* 축소 */
+  /* cursor: not-allowed;  */
+  /* 클릭 금지 표시 */
+
+  opacity: 1;
+  /* 0~1사이 값 */
+  visibility: visible;
+  /* visible / hidden */
+  /* display: none; */
+
+}
+
+p {
+  background-color: blueviolet;
+}
